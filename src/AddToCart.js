@@ -34,7 +34,7 @@ class AddToCart extends React.Component {
               type="number"
               className="form-control"
               id="quantityInput" 
-              aria-describedby="quantity"></input>
+              aria-describedby="quantity" required></input>
           </div>
           <div className="form-group">
             <label htmlFor="productInput">Product</label>
@@ -42,8 +42,8 @@ class AddToCart extends React.Component {
               onChange={e => this.setState({ [e.target.name]: {id: e.target.childNodes[e.target.selectedIndex].id, name: e.target.value, priceInCents: parseInt(e.target.childNodes[e.target.selectedIndex].getAttribute('price'))} })}
               name="product"
               className="form-control"
-              id="productInput">
-              <option>Select a product...</option>
+              id="productInput" required>
+              <option value="" selected disabled>Select a product...</option>
               {productOptions}
             </select>
           </div>
